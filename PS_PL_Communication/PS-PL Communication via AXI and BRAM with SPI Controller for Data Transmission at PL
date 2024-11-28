@@ -1,0 +1,21 @@
+This project builds on the PS-PL communication framework to enable PS-driven data transmission via the SPI (Serial Peripheral Interface) protocol using the PL.
+
+Objective:
+Transfer data written by the PS to a SPI-connected receiver, demonstrating real-time serial communication and its visualization.
+
+Methodology:
+
+BRAM Integration:
+The PS writes data into the BRAM via the AXI interface. The PL then reads this data for transmission over SPI.
+SPI Logic Controller:
+The SPI controller in the PL processes data retrieved from BRAM and transmits it serially to the receiver. The controller comprises:
+Clock Divider: Synchronizes SPI transmission timing by generating a controlled clock signal.
+SPI Transmitter: Converts parallel data into serial format using a state machine and transmits it with clock and chip-select signals.
+SPI Receiver: Converts serial data back into parallel format using a serial-to-parallel shift register and verifies data integrity.
+State Machines:
+The SPI transmitter and receiver state machines manage data flow with defined states (e.g., IDLE, SHIFT_DATA, SHIFT_DONE), ensuring accurate and synchronized data transmission.
+Testing and Debugging:
+
+Data integrity and signal synchronization are verified using the ILA.
+Debugging signals like shift_done and state_r are used to monitor the SPI communication process.
+Outputs from the SPI receiver are displayed on LEDs for quick validation.
