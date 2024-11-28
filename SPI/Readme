@@ -1,1 +1,9 @@
+This Task is divided into further sub tasks, which are listed below.
+1.	Study the SPI Transmitter and Receiver Working with signal waveforms.
+2.	Clock generator Module (Input 100MHz to 10MHz output).
+3.	Parallel to serial Shift Register (8 / 16 / 32 bits) using FSM.
+4.	Combine Sub-Task 2 and 3 with Control logic to initiate Process and raise a Done flag after completion of process.
+5.	Serial to parallel Shift Register (8 / 16 / 32 bits) using FSM.
+6.	Combine Sub-Task 2 and 5 with Control logic to initiate Process and raise a Done flag after completion of process.
+7.	Combine the tested module in task 2 & 3 and 4 for SPI Transmitter and Loop back data in tested module in task 2 & 5 and 6 for SPI Receiver. (Looped data should be matched).
 
