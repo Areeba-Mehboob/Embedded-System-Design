@@ -1,0 +1,20 @@
+This project focuses on enabling effective communication between the Processing System (PS) and Programmable Logic (PL) in a SOC using Block RAMs (BRAM) and Virtual Input/Output (VIO) interfaces over an AXI (Advanced eXtensible Interface) interconnect.
+
+Objective:
+Facilitate bidirectional data exchange between PS and PL, allowing PS to write data to specific memory addresses in BRAM, which the PL can read and manipulate via the VIO interface.
+
+Methodology:
+
+Block RAM Integration:
+The BRAM is used as a shared memory medium. Data written by the PS to a specific BRAM address is read by the PL, and vice versa.
+VIO Configuration:
+The VIO interface includes five channels: Address, Read, Write, Enable, and Strobe. These channels allow the PL to interact with the BRAM seamlessly, ensuring precise data read/write operations.
+Communication Flow:
+PS writes data to a user-specified BRAM address via the AXI interface.
+The VIO interface on PL accesses this address to read the data, which is then processed or visualized.
+The same process is used for writing data back from PL to BRAM, which PS can then read.
+Testing:
+Data exchanges are validated using Vivado’s Integrated Logic Analyzer (ILA), providing real-time visibility into memory addresses, read/write operations, and signal integrity.
+
+Future Enhancements:
+Currently, PS writes to a fixed address. The implementation can be extended to allow dynamic address selection for both PS and PL, enabling more flexible and scalable communication.
